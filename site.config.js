@@ -4,16 +4,16 @@ const CONFIG = {
     name: "sinny",
     image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "backend developer",
-    bio: "안녕하세요. Java Spring을 공부중인 백엔드 개발자 지망생 sinny입니다.",
+    bio: "안녕하세요😊Java Spring을 공부중인 백엔드 개발자 지망생 sinny입니다.",
     email: "dosly2@naver.com",
-    // linkedin: "ksinny",  
     github: "ksinny",
-    // instagram: "",
+    linkedin: "",  
+    instagram: "",
   },
   // projects: [
   //   {
-  //     name: `sinny-log`,
-  //     href: "https://github.com/ksinny/morethan-log",
+  //     name: ``,
+  //     href: "",
   //   },
   // ],
   //blog setting (required)
@@ -26,12 +26,13 @@ const CONFIG = {
   // CONFIG configration (required)
   link: "https://ksinny-log.vercel.app",
   since: 2026, // If leave this empty, current year will be used.
-  lang: "ko-KR", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
+  lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
 
   // notion configuration (required)
   notionConfig: {
-    pageId: process.env.NOTION_PAGE_ID,
+    pageId: "30ca3089539781e19155df5c07a9b311",
+    // pageId: process.env.NOTION_PAGE_ID,
   },
 
   // plugin configuration (optional)
