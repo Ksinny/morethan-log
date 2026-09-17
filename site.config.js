@@ -7,15 +7,13 @@ const CONFIG = {
     bio: "안녕하세요😊Java Spring을 공부중인 백엔드 개발자 지망생 sinny입니다.",
     email: "dosly2@naver.com",
     github: "ksinny",
-    linkedin: "",  
-    instagram: "",
   },
-  // projects: [
-  //   {
-  //     name: ``,
-  //     href: "",
-  //   },
-  // ],
+  projects: [
+    {
+      name: `옷장을 부탁해`,
+      href: "https://otboo.cc/",
+    },
+  ],
   //blog setting (required)
   blog: {
     title: "sinny-log",
