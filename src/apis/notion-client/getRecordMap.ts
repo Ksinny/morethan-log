@@ -1,7 +1,12 @@
 import { NotionAPI } from "notion-client"
 
 export const getRecordMap = async (pageId: string) => {
-  const api = new NotionAPI()
+  const api = new NotionAPI({
+  userLocale: "en",
+  userTimeZone: "Asia/Seoul",
+  authToken: undefined,
+  activeUser: undefined,
+})
   const recordMap = await api.getPage(pageId)
   return recordMap
 }
