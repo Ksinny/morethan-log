@@ -11,7 +11,6 @@ import "react-notion-x/src/styles.css"
 import "prismjs/themes/prism-tomorrow.css"
 
 // used for rendering equations (optional)
-
 import "katex/dist/katex.min.css"
 import { FC } from "react"
 import styled from "@emotion/styled"
@@ -54,10 +53,14 @@ type Props = {
   recordMap: ExtendedRecordMap
 }
 
+type StyledWrapperProps = {
+  currentScheme: string
+}
+
 const NotionRenderer: FC<Props> = ({ recordMap }) => {
   const [scheme] = useScheme()
   return (
-    <StyledWrapper>
+    <StyledWrapper currentScheme={scheme}>
       <_NotionRenderer
         darkMode={scheme === "dark"}
         recordMap={recordMap}
@@ -78,15 +81,21 @@ const NotionRenderer: FC<Props> = ({ recordMap }) => {
 
 export default NotionRenderer
 
-const StyledWrapper = styled.div`
-  /* // TODO: why render? */
+const StyledWrapper = styled.div<StyledWrapperProps>`
   .notion-collection-page-properties {
     display: none !important;
   }
   .notion-page {
     padding: 0;
   }
-  .notion-list {
-    width: 100%;
+  .notion-code {
+    background-color: ${({ currentScheme }) =>
+      currentScheme === "dark" ? "#2d2d2d" : "#f7f6f3"};
+  }
+  .notion {
+    font-family: Pretendard, -apple-system, sans-serif;
+    color: ${({ currentScheme }) =>
+      currentScheme === "dark" ? "rgb(209 213 219)" : "rgb(107 114 128)"};
+    overflow-wrap: break-word;
   }
 `
