@@ -36,15 +36,15 @@ const CONFIG = {
 
   // plugin configuration (optional)
   googleAnalytics: {
-    enable: false,
+    enable: true,
     config: {
-      measurementId: process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID || "",
+      measurementId: process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID || "G-WBCBY3JGKW",
     },
   },
   googleSearchConsole: {
-    enable: false,
+    enable: true,
     config: {
-      siteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
+      siteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "fWWvcz9Vg6EhtTI11a58KYRqWc_cow5jK0buO_IbhVM",
     },
   },
   naverSearchAdvisor: {
