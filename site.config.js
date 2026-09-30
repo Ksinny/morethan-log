@@ -1,10 +1,10 @@
 const CONFIG = {
   // profile setting (required)
   profile: {
-    name: "sinny",
+    name: "Ksinny",
     image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "backend developer",
-    bio: "안녕하세요😊Java Spring을 공부중인 백엔드 개발자 지망생 sinny입니다.",
+    bio: "안녕하세요😊Java Spring을 공부중인 백엔드 개발자 지망생 Ksinny입니다.",
     email: "dosly2@naver.com",
     github: "ksinny",
     linkedin: "",
@@ -31,8 +31,7 @@ const CONFIG = {
 
   // notion configuration (required)
   notionConfig: {
-    pageId: "30ca3089539781e19155df5c07a9b311",
-    // pageId: process.env.NOTION_PAGE_ID,
+    pageId: process.env.NOTION_PAGE_ID,
   },
 
   // plugin configuration (optional)
