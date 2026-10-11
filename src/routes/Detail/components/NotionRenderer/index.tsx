@@ -80,7 +80,7 @@ const NotionRenderer: FC<Props> = ({ recordMap }) => {
     link.href =
       scheme === "dark"
         ? "/prism/prism-tomorrow.css"
-        : "/prism/prism-solarizedlight.css"
+        : "/prism/prism.css"
   }, [scheme])
   
   return (
