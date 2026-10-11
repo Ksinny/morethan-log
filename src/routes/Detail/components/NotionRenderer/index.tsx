@@ -112,7 +112,8 @@ const StyledWrapper = styled.div<StyledWrapperProps>`
   .notion-page {
     padding: 0;
   }
-  .notion-code {
+  pre.notion-code,
+  pre.notion-code code {
     background-color: ${({ currentScheme }) =>
       currentScheme === "dark" ? "#2d2d2d" : "#f7f6f3"};
   }
