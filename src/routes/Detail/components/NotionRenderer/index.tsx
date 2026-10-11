@@ -7,12 +7,9 @@ import useScheme from "src/hooks/useScheme"
 // core styles shared by all of react-notion-x (required)
 import "react-notion-x/src/styles.css"
 
-// used for code syntax highlighting (optional)
-import "prismjs/themes/prism-tomorrow.css"
-
 // used for rendering equations (optional)
 import "katex/dist/katex.min.css"
-import { FC } from "react"
+import { FC, useEffect } from "react"
 import styled from "@emotion/styled"
 
 const _NotionRenderer = dynamic(
@@ -21,7 +18,18 @@ const _NotionRenderer = dynamic(
 )
 
 const Code = dynamic(() =>
-  import("react-notion-x/build/third-party/code").then(async (m) => m.Code)
+  import("react-notion-x/build/third-party/code").then(async (m) => {
+    await Promise.all([
+      import("prismjs/components/prism-java.js"),
+      import("prismjs/components/prism-sql.js"),
+      import("prismjs/components/prism-python.js"),
+      import("prismjs/components/prism-markdown.js"),
+      import("prismjs/components/prism-bash.js"),
+      import("prismjs/components/prism-diff.js"),
+      import("prismjs/components/prism-yaml.js"),
+    ])
+    return m.Code as any
+  })
 )
 
 const Collection = dynamic(() =>
@@ -59,6 +67,22 @@ type StyledWrapperProps = {
 
 const NotionRenderer: FC<Props> = ({ recordMap }) => {
   const [scheme] = useScheme()
+
+   useEffect(() => {
+    const id = "prism-theme"
+    let link = document.getElementById(id) as HTMLLinkElement | null
+    if (!link) {
+      link = document.createElement("link")
+      link.id = id
+      link.rel = "stylesheet"
+      document.head.appendChild(link)
+    }
+    link.href =
+      scheme === "dark"
+        ? "/prism/prism-tomorrow.css"
+        : "/prism/prism-solarizedlight.css"
+  }, [scheme])
+  
   return (
     <StyledWrapper currentScheme={scheme}>
       <_NotionRenderer
